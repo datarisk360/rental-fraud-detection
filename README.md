@@ -1,4 +1,4 @@
-# 🏠 Rental Fraud Detection (Work in Progress)
+# Rental Fraud Detection (Work in Progress)
 
 This project aims to detect potentially fraudulent rental listings in Spain, starting with data extracted from Rentalia.com.
 
@@ -6,23 +6,23 @@ The long-term goal is to create a tool that allows users to select a location, d
 
 ---
 
-## 🔄 Project Phases
+## Project Phases
 
-1. **Data Collection (Done ✅)**  
+1. **Data Collection (Done)**  
    A Selenium-based scraper for [Rentalia.com](https://www.rentalia.com/) that extracts listings for a specific region, date, and number of guests. Currently hardcoded (e.g., Cádiz, 1 guest), but will support user input via interface in the future.
 
-2. **Data Analysis (In Progress 🔧)**  
+2. **Data Analysis (In Progress...)**  
    Using both supervised and unsupervised machine learning models to analyze rental listings and detect fraud-like behavior.
 
    - Supervised models trained on labeled datasets (fraud/not fraud) show high accuracy (~90%).
    - Unsupervised models (e.g., Isolation Forest) currently perform worse (~35–40%), but useful for unknown cases.
 
-3. **Visualization (To Do 📊)**  
+3. **Visualization (TO DO)**  
    The goal is to present results through dashboards or interactive visuals (Plotly / Streamlit) to easily identify anomalies and patterns.
 
 ---
 
-## ⚙️ Requirements
+## Requirements
 
 To run the scraper:
 
