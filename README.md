@@ -1,41 +1,45 @@
-# Rental Fraud Detection (WIP)
+# 🏠 Rental Fraud Detection (Work in Progress)
 
-This project aims to identify potentially fraudulent rental listings in Spain, based on pricing patterns, location, and other listing metadata.
+This project aims to detect potentially fraudulent rental listings in Spain, starting with data extracted from Rentalia.com.
 
-## Project Phases
-
-1. **Data Collection**
-   - A custom scraper for Rentalia.com to extract listing data by date, location, and number of guests.
-   - Currently hardcoded to a region in Spain (e.g., Cádiz) and date window.
-   - In future iterations, the idea is to develop a user-friendly interface to select platform, region, dates, and guest count.
-
-2. **Data Analysis**
-   - Experimentation with supervised models (trained on a labeled dataset of rental listings as fraudulent or not) with promising results (>90% accuracy).
-   - Also exploring unsupervised anomaly detection (Isolation Forest, LOF), although current performance is lower (~35–40%).
-
-3. **Visualization (WIP)**
-   - Planned dashboard or interactive report to help visualize potential outliers and suspicious listings.
-   - Current placeholder includes test plots of pricing distributions and anomaly scores.
-
-## Tech Stack
-
-- Python, pandas, scikit-learn, BeautifulSoup
-- Jupyter Notebooks
-- Future: Streamlit / Plotly for visualization
-
-## Structure
-
-- `scraper/`: web scraping logic (Rentalia for now)
-- `models/`: supervised and unsupervised models, results
-- `data/`: small sample of extracted listings
-- `notebooks/`: model training and testing
-- `visuals/`: graphs and screenshots
-
-## Work in Progress
-
-This is a learning and experimentation project. Future steps:
-- Add scraping from other platforms (e.g., Idealista)
-- Improve anomaly detection
-- Build user-facing interface
+The long-term goal is to create a tool that allows users to select a location, date range, number of guests, and rental platform (e.g., Rentalia, Idealista), and detect listings that present anomalous or suspicious patterns.
 
 ---
+
+## 🔄 Project Phases
+
+1. **Data Collection (Done ✅)**  
+   A Selenium-based scraper for [Rentalia.com](https://www.rentalia.com/) that extracts listings for a specific region, date, and number of guests. Currently hardcoded (e.g., Cádiz, 1 guest), but will support user input via interface in the future.
+
+2. **Data Analysis (In Progress 🔧)**  
+   Using both supervised and unsupervised machine learning models to analyze rental listings and detect fraud-like behavior.
+
+   - Supervised models trained on labeled datasets (fraud/not fraud) show high accuracy (~90%).
+   - Unsupervised models (e.g., Isolation Forest) currently perform worse (~35–40%), but useful for unknown cases.
+
+3. **Visualization (To Do 📊)**  
+   The goal is to present results through dashboards or interactive visuals (Plotly / Streamlit) to easily identify anomalies and patterns.
+
+---
+
+## ⚙️ Requirements
+
+To run the scraper:
+
+- Python 3.8+
+- Google Chrome browser
+- ChromeDriver installed (must match your Chrome version)
+      - You can download ChromeDriver here: https://chromedriver.chromium.org/downloads
+- Selenium
+- pandas
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Make sure to update the script (scraper.py) with the correct path to your ChromeDriver. Example:
+PATH = "C:\\Tools\\chromedriver\\chromedriver.exe"
+
+
